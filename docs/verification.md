@@ -21,3 +21,9 @@ Public Shopify App Store launch requested, initially free. Render Blueprint, 120
 - Deploy and verify Docker/PostgreSQL, TLS, backups/restore, persistent worker and real embedded install/reinstall flows. Complete keyboard/accessibility QA.
 - Complete listing assets, support details and Shopify review. Config deployment does not itself publish the app on the App Store.
 - Price undo remains unavailable by design. Notification email is stored but sending is not implemented.
+
+## Render form submission regression
+
+The live service returned 200 from /health but rejected POST /app/guide.data with the public HTTPS Origin (400). The identical unauthenticated request with an HTTP Origin reached Shopify authentication (410). This reproduced a proxy protocol mismatch in React Router's action-origin check before application actions execute.
+
+react-router.config.ts now permits only stocksheet-web.onrender.com as an additional action origin, following React Router's allowedActionOrigins configuration. No wildcard is allowed. The three proxy-origin regression tests exercise React Router's real request handler: valid HTTPS submissions reach the action, foreign and lookalike origins are rejected, and the old configuration reproduces the failure. Type checking and the production build pass. Redeployment and an embedded Shopify UI retest are still required.
