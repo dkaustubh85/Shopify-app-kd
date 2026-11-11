@@ -46,7 +46,7 @@
   "devDependencies": {
     "@react-router/dev": "7.18.5",
     "@react-router/fs-routes": "7.18.5",
-    "@shopify/api-codegen-preset": "^1.1.1",
+    "@shopify/api-codegen-preset": "^3.0.0",
     "@shopify/cli": "^3.0.0",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.2.0",
