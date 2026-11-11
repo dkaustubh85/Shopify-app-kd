@@ -10,7 +10,7 @@ generator client {
 // See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
 datasource db {
   provider = "sqlite"
-  url      = "file:dev.sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model Session {
@@ -31,4 +31,138 @@ model Session {
   emailVerified       Boolean?  @default(false)
   refreshToken        String?
   refreshTokenExpires DateTime?
+}
+
+model Shop {
+ id String @id
+ settings Json @default("{}")
+ installedAt DateTime @default(now())
+ syncOperationId String?
+ syncStatus String @default("pending")
+ syncError String?
+ syncStartedAt DateTime?
+}
+model Template {
+ id String @id @default(cuid())
+ shopId String
+ name String
+ mapping Json
+ isDefault Boolean @default(false)
+ createdAt DateTime @default(now())
+ @@index([shopId])
+}
+model Upload {
+ id String @id @default(cuid())
+ shopId String
+ templateId String?
+ fileName String
+ action String
+ locationId String
+ staffName String
+ status String @default("draft")
+ totals Json @default("{}")
+ mapping Json
+ createdAt DateTime @default(now())
+ appliedAt DateTime?
+ undoneAt DateTime?
+ file UploadFile?
+ rows UploadRow[]
+ jobs Job[]
+ @@index([shopId, createdAt])
+}
+model UploadRow {
+ id String @id @default(cuid())
+ uploadId String
+ upload Upload @relation(fields:[uploadId],references:[id],onDelete:Cascade)
+ rowIndex Int
+ source Json
+ matchKey String
+ productTitle String @default("")
+ variantTitle String @default("")
+ imageUrl String?
+ variantId String?
+ productId String?
+ inventoryItemId String?
+ previousQty Int?
+ newQty Int?
+ previousPrice String?
+ newPrice String?
+ status String
+ errorMessage String?
+ applied Boolean @default(false)
+ undone Boolean @default(false)
+ @@index([uploadId,status])
+}
+model Job {
+ id String @id @default(cuid())
+ shopId String
+ uploadId String?
+ upload Upload? @relation(fields:[uploadId],references:[id],onDelete:Cascade)
+ type String
+ payload Json @default("{}")
+ status String @default("queued")
+ progress Int @default(0)
+ attempts Int @default(0)
+ error String?
+ leaseUntil DateTime?
+ createdAt DateTime @default(now())
+ batches WriteBatch[]
+ @@index([shopId,status])
+}
+model WriteBatch {
+ id String @id @default(uuid())
+ jobId String
+ job Job @relation(fields:[jobId],references:[id],onDelete:Cascade)
+ rowIds Json
+ mutation String
+ variables Json
+ status String @default("pending")
+ firstSentAt DateTime?
+ error String?
+ @@index([jobId,status])
+}
+model VariantCache {
+ id String @id @default(cuid())
+ shopId String
+ variantId String
+ productId String
+ inventoryItemId String
+ productTitle String
+ variantTitle String
+ handle String
+ options Json
+ sku String
+ barcode String
+ imageUrl String?
+ tracked Boolean
+ price String
+ quantities Json @default("{}")
+ updatedAt DateTime @updatedAt
+ @@unique([shopId,variantId])
+ @@index([shopId,sku])
+ @@index([shopId,barcode])
+ @@index([shopId,handle])
+}
+model WebhookEvent {
+ id String @id
+ createdAt DateTime @default(now())
+}
+
+model UploadFile {
+ uploadId String @id
+ upload Upload @relation(fields:[uploadId],references:[id],onDelete:Cascade)
+ contents Bytes
+ mimeType String
+ sha256 String
+ createdAt DateTime @default(now())
+}
+model UserGuide {
+ id String @id @default(cuid())
+ shopId String
+ userId String
+ version Int @default(1)
+ step Int @default(0)
+ status String @default("in_progress")
+ updatedAt DateTime @default(now()) @updatedAt
+ @@unique([shopId,userId])
 }

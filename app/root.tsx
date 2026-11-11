@@ -4,7 +4,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from "react-router";
 
 export default function App() {
   return (
@@ -17,6 +17,7 @@ export default function App() {
           rel="stylesheet"
           href="https://cdn.shopify.com/static/fonts/inter/v4/styles.css"
         />
+        <link rel="icon" type="image/png" href="/brand/stocksheet-icon.png" />
         <Meta />
         <Links />
       </head>

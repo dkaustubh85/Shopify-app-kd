@@ -1,0 +1,6 @@
+name = "StockSheet"
+roles = ["frontend", "backend"]
+webhooks_path = "/webhooks/app/uninstalled"
+[commands]
+predev = "npm run setup"
+dev = "npm exec react-router dev"

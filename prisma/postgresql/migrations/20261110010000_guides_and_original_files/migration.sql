@@ -1,0 +1,18 @@
+CREATE TABLE "UploadFile" (
+ "uploadId" TEXT NOT NULL PRIMARY KEY,
+ "contents" BYTEA NOT NULL,
+ "mimeType" TEXT NOT NULL,
+ "sha256" TEXT NOT NULL,
+ "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ CONSTRAINT "UploadFile_uploadId_fkey" FOREIGN KEY ("uploadId") REFERENCES "Upload" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE "UserGuide" (
+ "id" TEXT NOT NULL PRIMARY KEY,
+ "shopId" TEXT NOT NULL,
+ "userId" TEXT NOT NULL,
+ "version" INTEGER NOT NULL DEFAULT 1,
+ "step" INTEGER NOT NULL DEFAULT 0,
+ "status" TEXT NOT NULL DEFAULT 'in_progress',
+ "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE UNIQUE INDEX "UserGuide_shopId_userId_key" ON "UserGuide"("shopId","userId");
