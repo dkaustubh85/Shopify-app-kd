@@ -578,11 +578,11 @@ export default function Upload() {
                   tone={summary.errors ? "warning" : "info"}
                   title={
                     summary.matched +
-                    " matched ? " +
+                    " matched | " +
                     summary.unmatched +
-                    " unmatched ? " +
+                    " unmatched | " +
                     summary.soldOut +
-                    " will become sold out ? " +
+                    " will become sold out | " +
                     summary.errors +
                     " errors"
                   }
@@ -659,7 +659,7 @@ export default function Upload() {
                           {kind === "setPrice"
                             ? r.previousPrice
                             : r.previousQty}{" "}
-                          ? {kind === "setPrice" ? r.newPrice : r.newQty}
+                          to {kind === "setPrice" ? r.newPrice : r.newQty}
                         </IndexTable.Cell>
                         <IndexTable.Cell>
                           <BlockStack gap="100">
@@ -737,8 +737,8 @@ export default function Upload() {
                   </Text>
                   <ProgressBar progress={data.job?.progress || 0} />
                   <Text as="p">
-                    {data.job?.progress || 0}% processed ? {data.live.applied}{" "}
-                    updated ? {data.live.errors} errors. Your snapshots are
+                    {data.job?.progress || 0}% processed | {data.live.applied}{" "}
+                    updated | {data.live.errors} errors. Your snapshots are
                     saved before any write.
                   </Text>
                   {data.job?.status === "retryable" && (
@@ -767,7 +767,7 @@ export default function Upload() {
                     Your upload is processed
                   </Text>
                   <Text as="p">
-                    {data.live.applied} variants updated ? {data.live.errors}{" "}
+                    {data.live.applied} variants updated | {data.live.errors}{" "}
                     errors. Review every result in the change log. Quantity
                     snapshots are available for undo.
                   </Text>
