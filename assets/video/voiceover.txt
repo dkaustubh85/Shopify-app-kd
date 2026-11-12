@@ -1,0 +1,17 @@
+Your spreadsheet. Your inventory. In sync.
+
+Meet StockSheet.
+
+Start with an Excel or CSV file. Upload your sheet, then match its columns to your store.
+
+Choose what to update, and select your inventory location.
+
+Preview the changes before anything is applied. Review unmatched rows and correct your sheet when needed.
+
+When everything looks right, confirm your changes. Follow the progress as StockSheet updates your inventory.
+
+Need your file again? Open History to download your original spreadsheet or the results.
+
+For inventory quantities, undo can restore saved values while skipping stock that changed later.
+
+StockSheet. Less repetitive work. More control over your stock.

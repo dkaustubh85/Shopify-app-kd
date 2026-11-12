@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "fe6a76a80017a63cbc948eed99d2f5c9"
-application_url = "https://example.com"
+application_url = "https://stocksheet-web.onrender.com"
 embedded = true
 name = "StockSheet"
 
@@ -14,13 +14,12 @@ scopes = "read_inventory,read_locations,read_products,write_inventory,write_prod
 
 [auth]
 redirect_urls = [
-  "https://example.com/auth/callback",
-  "https://example.com/auth/shopify/callback"
+  "https://stocksheet-web.onrender.com/auth/callback",
+  "https://stocksheet-web.onrender.com/auth/shopify/callback"
 ]
 
 [build]
-include_config_on_deploy = true
-automatically_update_urls_on_dev = true
+automatically_update_urls_on_dev = false
 
 [[webhooks.subscriptions]]
 topics = ["app/uninstalled"]

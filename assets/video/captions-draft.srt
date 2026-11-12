@@ -1,0 +1,49 @@
+1
+00:00:00,000 --> 00:00:04,000
+Your spreadsheet. Your inventory. In sync.
+
+2
+00:00:04,000 --> 00:00:06,000
+Meet StockSheet.
+
+3
+00:00:06,000 --> 00:00:10,000
+Start with an Excel or CSV file.
+
+4
+00:00:10,000 --> 00:00:15,000
+Upload your sheet, then match its columns to your store.
+
+5
+00:00:15,000 --> 00:00:20,000
+Choose what to update, and select your inventory location.
+
+6
+00:00:20,000 --> 00:00:24,000
+Preview the changes before anything is applied.
+
+7
+00:00:24,000 --> 00:00:29,000
+Review unmatched rows and correct your sheet when needed.
+
+8
+00:00:29,000 --> 00:00:33,000
+When everything looks right, confirm your changes.
+
+9
+00:00:33,000 --> 00:00:37,000
+Follow the progress as StockSheet updates your inventory.
+
+10
+00:00:37,000 --> 00:00:43,000
+Open History to download your original spreadsheet or the results.
+
+11
+00:00:43,000 --> 00:00:50,000
+Undo can restore saved quantities,
+while skipping stock that changed later.
+
+12
+00:00:50,000 --> 00:00:55,000
+StockSheet. Less repetitive work.
+More control over your stock.

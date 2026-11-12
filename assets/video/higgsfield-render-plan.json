@@ -1,0 +1,54 @@
+{
+  "project": "StockSheet Shopify app promo",
+  "format": {
+    "aspectRatio": "16:9",
+    "resolution": "1920x1080",
+    "fps": 30,
+    "durationSeconds": 55
+  },
+  "style": {
+    "mood": "premium minimal software launch film",
+    "palette": ["ivory", "warm white", "charcoal", "emerald accent"],
+    "motion": "slow easing, soft lighting, restrained camera movement",
+    "avoid": ["extra logos", "generated text", "exaggerated effects", "copied Apple-style branding"]
+  },
+  "shots": [
+    {
+      "id": "opening",
+      "duration": 5,
+      "type": "icon_intro",
+      "prompt": "Animate the supplied StockSheet icon on an ivory studio background with a slow, gentle camera approach. Keep the icon geometry unchanged. Use soft emerald reflected light and a premium minimal software launch aesthetic. Add one subtle shadow and restrained depth. No generated text, no extra logos, no exaggerated effects. 5 seconds, 16:9, 30 fps."
+    },
+    {
+      "id": "transition1",
+      "duration": 3,
+      "type": "ui_bridge",
+      "prompt": "Create a premium minimal software product demo transition between real StockSheet UI frames. Use a calm fade, subtle camera drift, and soft emerald accents on an ivory background. Keep the UI content anchored to real app screens and avoid generating new labels or controls. 3 seconds, 16:9, 30 fps."
+    },
+    {
+      "id": "closing",
+      "duration": 5,
+      "type": "icon_close",
+      "prompt": "The same StockSheet icon settles into the center of an ivory background with generous negative space and a soft shadow. Use slow easing, elegant micro-motion, and premium minimal motion design. Keep the icon unchanged and avoid any generated text. 5 seconds, 16:9, 30 fps."
+    }
+  ],
+  "finalTextOverlays": [
+    "Your spreadsheet. Your inventory. In sync.",
+    "Start with an Excel or CSV file. Upload your sheet, then match its columns to your store.",
+    "Choose what to update, and select your inventory location.",
+    "Preview the changes before anything is applied.",
+    "Review unmatched rows and correct your sheet when needed.",
+    "When everything looks right, confirm your changes.",
+    "Follow the progress as StockSheet updates your inventory.",
+    "Open History to download your original spreadsheet or the results.",
+    "Inventory quantities only. Price updates cannot be undone automatically.",
+    "StockSheet. Less repetitive work. More control over your stock."
+  ],
+  "approvalRules": [
+    "Do not claim availability before Shopify approval.",
+    "Do not mention App Store badges or public availability until listing approval is complete.",
+    "Use real screenshots and demo SKUs only.",
+    "No merchant credentials, orders, or sensitive data.",
+    "Export a landscape master and a captioned vertical cut."
+  ]
+}

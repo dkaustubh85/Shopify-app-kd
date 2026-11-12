@@ -29,3 +29,10 @@ prisma/*.sqlite*
 .react-router/
 
 /node_modules.remix-backup/
+# Private browser diagnostics and unredacted recordings stay local.
+/assets/video/reviewer-raw.webm
+/docs/verification/admin-live.png
+/docs/verification/failure.png
+/docs/verification/listing-current.png
+/docs/verification/reviewer-frame.jpg
+/docs/verification/submitted.png

@@ -37,3 +37,11 @@ Remaining general-policy checks find inventory-only functionality: no marketplac
 - 5.10 Donation: opt-in not requested.
 
 Resources: https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements ; https://shopify.dev/docs/apps/launch/shopify-app-store/best-practices ; https://shopify.dev/docs/apps/launch/billing ; https://shopify.dev/docs/apps/launch/app-store-review/submit-app-for-review
+
+## Production review update — November 11, 2026
+
+Current canonical checklist fetched using Shopify CLI 5.0.1 into docs/app-store-requirements-current.md. Rechecked auth/SDK, GraphQL writer, scopes, installation routing, extension applicability and billing configuration. Of the 31 applicable locally checkable requirements: 30 likely passing, 0 likely failing, 1 needs additional verification (1.1.1: a separate incognito browser run was not performed; SDK session-token authentication, CDN App Bridge and live authenticated operations work and Shopify embedded checks pass). The same ten category groups listed above remain skipped under their applicability/opt-in conditions.
+
+Shopify's automated install/authentication, redirect, compliance-webhook, HMAC and TLS checks passed. Embedded checks passed. Public listing has saved screenshots, truthful feature copy, free pricing, accessible privacy policy and accessible reviewer video. Render health and actual upload/apply/undo were verified. Privacy owner and manual daily queue review are now assigned; provider backup/log windows and restore suppression are documented. Production build passes. These observations supersede the historical infrastructure/listing/privacy blockers above.
+
+Shopify accepted the submission and is assigning a reviewer. This self-review covers the local checklist subset and does not replace Shopify's official review. Separate incognito/accessibility/edge-case work remains useful; no approval is claimed.
